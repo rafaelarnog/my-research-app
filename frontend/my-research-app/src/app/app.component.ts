@@ -14,7 +14,7 @@ export class AppComponent {
     (function($) {
         "use strict";
     
-        $('#sidebarCollapse').on('click', function () {
+        $('#btnSidebarCollapse').on('click', function () {
             $('#sidebar').toggleClass('active');
         });
     })(jQuery);
