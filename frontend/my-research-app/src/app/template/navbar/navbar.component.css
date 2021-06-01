@@ -1,0 +1,30 @@
+div.input-group-pesquisa > div.input-group-prepend > .input-group-text#pesquisaMenu {
+    background-color: white;
+    border-right: 0;
+    border-top-left-radius: 1.1rem;
+    border-bottom-left-radius: 1.1rem;
+}
+
+div.input-group-pesquisa > .form-control {
+    border-left: 0;
+    border-radius: 1.1rem;
+}
+
+.form-control:focus{
+    box-shadow: 0 0 0 0;
+    border-color: #ced4da;
+}
+
+.input-group-prepend {
+    margin-right: -10x;
+}
+
+#btn-adicionar-novo,
+#btn-notificacao {
+    margin-right: 10px;
+}
+
+.navbar-nav{
+    display: flex;
+    align-items: center;;
+}

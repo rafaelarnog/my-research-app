@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <button class="btn"><fa-icon [icon]="faBars"></fa-icon></button>
+        <a class="navbar-brand" href="#">My Research</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <form class="me-auto mb-2 mb-lg-0">
+                <div class="input-group input-group-pesquisa">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="pesquisaMenu"><fa-icon [icon]="faSearch"></fa-icon></span>
+                    </div>
+
+                    <input type="text" id="caixaPesquisaMenu" class="form-control" placeholder="Pesquisa" aria-label="Pesquisa" aria-describedby="pesquisa">
+                </div>
+            </form>
+            <ul class="navbar-nav d-flex">
+                <li class="nav-item">
+                    <button class="btn btn-primary" id="btn-adicionar-novo"><fa-icon [icon]="faPlus"></fa-icon> Adicionar novo</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn" id="btn-notificacao"><fa-icon [icon]="faBell"></fa-icon><br>Notificações</button>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuUser" data-bs-toggle="dropdown" aria-expanded="false">
+                            Usuário
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#"><fa-icon [icon]="faUser"></fa-icon> Minha conta</a></li>
+                            <li><a class="dropdown-item" href="#"><fa-icon [icon]="faExclamationCircle"></fa-icon> Sobre</a></li>
+                            <li><a class="dropdown-item" href="#"><fa-icon [icon]="faSignOutAlt"></fa-icon> Sair</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
