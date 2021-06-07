@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'
 
 import { TrabalhosRoutingModule } from './trabalhos-routing.module';
 import { TrabalhosFormComponent } from './trabalhos-form/trabalhos-form.component';
@@ -9,7 +10,8 @@ import { TrabalhosFormComponent } from './trabalhos-form/trabalhos-form.componen
   declarations: [TrabalhosFormComponent],
   imports: [
     CommonModule,
-    TrabalhosRoutingModule
+    TrabalhosRoutingModule,
+    FormsModule
   ],
   exports: [
     TrabalhosFormComponent

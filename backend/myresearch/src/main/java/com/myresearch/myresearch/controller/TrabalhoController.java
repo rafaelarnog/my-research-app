@@ -11,19 +11,20 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/trabalho")
+@CrossOrigin("http://localhost:4200")
 public class TrabalhoController {
 
     @Autowired
     private TrabalhoService trabalhoService;
 
-    @GetMapping(value = "/{id}")
-    private ResponseEntity<Trabalho> findById(@PathVariable("id") Integer id){
-        return ResponseEntity.ok().body(trabalhoService.findById(id));
-    }
-
     @GetMapping
     public ResponseEntity<List<Trabalho>> findAll(){
         return ResponseEntity.ok().body(trabalhoService.findAll());
+    }
+
+    @GetMapping(value = "/{id}")
+    private ResponseEntity<Trabalho> findById(@PathVariable("id") Integer id){
+        return ResponseEntity.ok().body(trabalhoService.findById(id));
     }
 
     @PostMapping(value = "/add")

@@ -8,46 +8,59 @@
     <div class="card" id="card-trabalho">
         <div class="card-body">
             <h2 class="text-center" id="titulo-salvar-trabalho">Cadastrar Trabalho Acadêmico</h2>
-            <form>
+            <form #trabalhoForm="ngForm" (ngSubmit)="onSubmit()">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-success" role="alert" *ngIf="success == true">
+                            Trabalho salvo com sucesso!
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="error == true">
+                            Erro ao tentar salvar o trabalho!
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-md-6">
                         <label for="nome" class="form-label">Nome:</label>
-                        <input type="text" class="form-control" id="nome">
+                        <input type="text" class="form-control" name="nome" id="nome" [(ngModel)]="trabalho.nome">
                     </div>
                     <div class="col-md-6">
                         <label for="categoria" class="form-label">Categoria:</label>
-                        <input type="text" class="form-control" id="categoria">
+                        <input type="text" class="form-control" name="categoria" id="categoria" [(ngModel)]="trabalho.categoria">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <label for="tipo" class="form-label">Tipo:</label>
-                        <input type="text" class="form-control" id="tipo">
+                        <input type="text" class="form-control" name="tipo" id="tipo" [(ngModel)]="trabalho.tipo">
                     </div>
                     <div class="col-md-6">
                         <label for="text" class="form-label">Status</label>
-                        <input type="text" class="form-control" id="status">
+                        <input type="text" class="form-control" name="status" id="status" >
+                        <!-- [(ngModel)]="trabalho.status" -->
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <label for="data-inicio" class="form-label">Data de início: </label>
-                        <input type="text" class="form-control" id="data-inicio">
+                        <input type="text" class="form-control" name="dataInicio" id="dataInicio" [(ngModel)]="trabalho.dataInicio">
                     </div>
                     <div class="col-md-6">
                         <label for="data-fim" class="form-label">Data finalização: </label>
-                        <input type="text" class="form-control" id="data-fim">
+                        <input type="text" class="form-control" name="dataFim" id="dataFim" [(ngModel)]="trabalho.dataFim">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <label for="descricao" class="form-label">Descrição: </label>
-                        <textarea name="descricao" id="descricao" cols="30" rows="3" class="form-control"></textarea>
+                        <textarea name="descricao" id="descricao" cols="30" rows="3" class="form-control" [(ngModel)]="trabalho.descricao"></textarea>
                     </div>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-12">
-                        <button class="btn btn-primary" id="btn-salvar-trabalho">Salvar</button>
+                        <button class="btn btn-primary" id="btn-salvar-trabalho" type="submit">Salvar</button>
                     </div>
                 </div>
             </form>
