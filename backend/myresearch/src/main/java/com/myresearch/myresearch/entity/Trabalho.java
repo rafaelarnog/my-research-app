@@ -25,6 +25,9 @@ public class Trabalho {
     @Column(name = "tipo")
     private String tipo;
 
+    @Column(name = "status")
+    private String status;
+
     @Column(name = "datainicio")
     private String dataInicio;
 

@@ -5,6 +5,7 @@ CREATE TABLE my_research.trabalho (
     nome VARCHAR(60) NOT NULL,
     categoria VARCHAR(20) NOT NULL,
     tipo VARCHAR(20) not null,
+    status VARCHAR(20) not null,
     datainicio VARCHAR(11) not null,
     datafim VARCHAR(11) not null,
     descricao VARCHAR(250) not null,

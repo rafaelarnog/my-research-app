@@ -40,6 +40,9 @@ public class TrabalhoServiceImpl implements TrabalhoService {
                 || trabalhoDto.getTipo() == null
                 || trabalhoDto.getTipo().isBlank()
 
+                || trabalhoDto.getStatus() == null
+                || trabalhoDto.getStatus().isBlank()
+
                 || trabalhoDto.getDataInicio() == null
                 || trabalhoDto.getDataInicio().isBlank()
 
@@ -56,6 +59,7 @@ public class TrabalhoServiceImpl implements TrabalhoService {
         trabalho.setNome(trabalhoDto.getNome());
         trabalho.setCategoria(trabalhoDto.getCategoria());
         trabalho.setTipo(trabalhoDto.getTipo());
+        trabalho.setStatus(trabalhoDto.getStatus());
         trabalho.setDataInicio(trabalhoDto.getDataInicio());
         trabalho.setDataFim(trabalhoDto.getDataFim());
         trabalho.setDescricao(trabalhoDto.getDescricao());
@@ -77,6 +81,9 @@ public class TrabalhoServiceImpl implements TrabalhoService {
                 || trabalhoDto.getTipo() == null
                 || trabalhoDto.getTipo().isBlank()
 
+                || trabalhoDto.getStatus() == null
+                || trabalhoDto.getStatus().isBlank()
+
                 || trabalhoDto.getDataInicio() == null
                 || trabalhoDto.getDataInicio().isBlank()
 
@@ -93,6 +100,7 @@ public class TrabalhoServiceImpl implements TrabalhoService {
             record.setNome(trabalhoDto.getNome());
             record.setTipo(trabalhoDto.getTipo());
             record.setCategoria(trabalhoDto.getCategoria());
+            record.setStatus(trabalhoDto.getStatus());
             record.setDataInicio(trabalhoDto.getDataInicio());
             record.setDataFim(trabalhoDto.getDataFim());
             record.setDescricao(trabalhoDto.getDescricao());

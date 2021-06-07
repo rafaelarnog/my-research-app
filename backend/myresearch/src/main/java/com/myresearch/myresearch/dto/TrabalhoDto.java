@@ -12,6 +12,7 @@ public class TrabalhoDto {
     private String nome;
     private String categoria;
     private String tipo;
+    private String status;
     private String dataInicio;
     private String dataFim;
     private String descricao;

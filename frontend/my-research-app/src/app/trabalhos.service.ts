@@ -22,6 +22,7 @@ export class TrabalhosService {
     trabalho.dataInicio = "08/12/1996";
     trabalho.dataFim = "08/12/2100";
     trabalho.descricao = "Descrição 1";
+    trabalho.status = "Ativo";
     return trabalho;
   }
 }

@@ -5,4 +5,5 @@ export class Trabalho {
     dataInicio: string;
     dataFim: string;
     descricao: string;
+    status: string;
 }
