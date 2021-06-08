@@ -1,9 +1,16 @@
 <nav aria-label="breadcrumb">
     <h1>Trabalhos Form</h1>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item active" aria-current="page">Formulário de Trabalhos</li>
+        <li class="breadcrumb-item active" aria-current="page">{{ trabalho.id ? 'Edição' : 'Cadastro' }}</li>
     </ol>
 </nav>
+<div class="row">
+    <div class="col-md-12">
+        <button class="btn btn-secondary" type="button" (click)="voltarParaListagem()">
+            <fa-icon [icon]="faArrowLeft"></fa-icon> Voltar
+        </button>
+    </div>
+</div>
 <div class="container">
     <div class="card" id="card-trabalho">
         <div class="card-body">
@@ -13,7 +20,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="alert alert-success" role="alert" *ngIf="success == true">
-                            Trabalho salvo com sucesso!
+                            Trabalho {{ trabalho.id ? 'editado' : 'cadastrado' }} com sucesso!
                         </div>
                         <div class="alert alert-danger" role="alert" *ngIf="error == true">
                             Erro ao tentar salvar o trabalho!
@@ -59,7 +66,12 @@
                 </div>
                 <div class="row text-center">
                     <div class="col-md-12">
-                        <button class="btn btn-primary" id="btn-salvar-trabalho" type="submit">Salvar</button>
+                        <button class="btn btn-primary" id="btn-salvar-trabalho" type="submit" *ngIf="!trabalho.id">
+                            <fa-icon [icon]="faSave"></fa-icon> Cadastrar
+                        </button>
+                        <button class="btn btn-primary" id="btn-salvar-trabalho" type="submit" *ngIf="trabalho.id">
+                            <fa-icon [icon]="faEdit"></fa-icon> Editar
+                        </button>
                     </div>
                 </div>
             </form>

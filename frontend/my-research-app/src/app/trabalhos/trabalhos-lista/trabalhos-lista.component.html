@@ -1,0 +1,76 @@
+<nav aria-label="breadcrumb">
+    <h1>Trabalhos</h1>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Lista de Trabalhos</li>
+    </ol>
+</nav>
+<div class="row">
+    <div class="col-md-12">
+        <div class="alert alert-success" role="alert" *ngIf="mensagemSucesso">
+            {{ mensagemSucesso }}
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="mensagemErro">
+            {{ mensagemErro }}
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        <button class="btn btn-primary" (click)="novoCadastro()">
+            <fa-icon [icon]="faPlus"></fa-icon> Novo
+        </button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th class="col-2">Nome</th>
+                    <th class="col-1">Categoria</th>
+                    <th class="col-1">Tipo</th>
+                    <th class="col-1">Status</th>
+                    <th class="col-1">Data de Início</th>
+                    <th class="col-1">Data Fim</th>
+                    <th class="col-3">Descrição</th>
+                    <th class="col-2"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let trabalho of trabalhos">
+                    <td>{{ trabalho.nome }}</td>
+                    <td>{{ trabalho.categoria }}</td>
+                    <td>{{ trabalho.tipo }}</td>
+                    <td>{{ trabalho.status }}</td>
+                    <td>{{ trabalho.dataInicio }}</td>
+                    <td>{{ trabalho.dataFim }}</td>
+                    <td>{{ trabalho.descricao }}</td>
+                    <td>
+                        <button class="btn btn-primary" routerLink="/trabalhos-form/{{ trabalho.id }}">
+                            <fa-icon [icon]="faPencilAlt"></fa-icon> Editar
+                        </button>
+                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDelecao" (click)="preparaDelecao(trabalho)">
+                            <fa-icon [icon]="faTrashAlt"></fa-icon> Apagar
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal fade" id="modalDelecao" tabindex="-1" aria-labelledby="modalDelecaoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Confirmação</h4>
+                </div>
+                <div class="modal-body" *ngIf="trabalhoSelecionado">
+                    Confirma a deleção do trabalho "{{ trabalhoSelecionado.nome }}"?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-danger" (click)="deletarTrabalho()" data-bs-dismiss="modal">Deletar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

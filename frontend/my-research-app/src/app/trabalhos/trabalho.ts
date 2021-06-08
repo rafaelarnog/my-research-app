@@ -1,4 +1,5 @@
 export class Trabalho {
+    id: number;
     nome: string;
     categoria: string;
     tipo: string;
