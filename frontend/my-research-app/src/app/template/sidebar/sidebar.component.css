@@ -3,22 +3,22 @@ a:hover,
 a:focus {
     color: inherit;
     text-decoration: none;
-    transition: all 0.4s;
+    transition: all 0.6s;
 }
 
 #sidebar {
-    min-width: 220px;
-    max-width: 220px;
-    background: #000000;
+    min-width: 190px;
+    max-width: 190px;
+    background: #32929d;
     color: #fff;
-    transition: all 0.4s;
+    transition: margin-left 0.5s;
     min-height: 100%;
     /* position: fixed; */
 }
 
 #sidebar.active {
-    min-width: 80px;
-    max-width: 80px;
+    min-width: 65px;
+    max-width: 65px;
     text-align: center;
 }
 
@@ -28,11 +28,12 @@ a:focus {
 
 #sidebar ul li a fa-icon {
     font-size: 25px;
-    margin-right: 10px;
+    margin-left: 10px;
 }
 
 #sidebar ul li a span {
-    display: contents;
+    display: inline-block;
+    padding-left: 10px;
 }
 
 #sidebar.active ul li a {
@@ -54,6 +55,7 @@ a:focus {
 
 #sidebar.active ul li a fa-icon {
     font-size: 25px;
+    margin-left: 0px;
 }
 
 #sidebar.active ul li a span {
@@ -62,17 +64,16 @@ a:focus {
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #03151f;
 }
 
 #sidebar ul li a {
-    padding: 10px;
+    padding: 18px;
     font-size: 1.4em;
     display: block;
 }
 
 #sidebar ul li a:hover {
-    color: #7386D5;
+    color: #32929d;
     background: #fff;
 }
 
