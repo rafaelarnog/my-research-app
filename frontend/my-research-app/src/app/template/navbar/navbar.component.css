@@ -1,8 +1,12 @@
-div.input-group-pesquisa > div.input-group-prepend > .input-group-text#pesquisaMenu {
+#pesquisaMenu {
     background-color: white;
     border-right: 0;
     border-top-left-radius: 1.1rem;
     border-bottom-left-radius: 1.1rem;
+    border-top: 1px solid #ced4da;
+    border-bottom: 1px solid #ced4da;
+    border-left: 1px solid #ced4da;
+    margin-right: -10x;
 }
 
 div.input-group-pesquisa > .form-control {
@@ -15,8 +19,11 @@ div.input-group-pesquisa > .form-control {
     border-color: #ced4da;
 }
 
-.input-group-prepend {
-    margin-right: -10x;
+#btn-adicionar-novo{
+    background-color: #008080;
+    border-color: #008080;
+    color: white;
+    border-radius: 2rem;
 }
 
 #btn-adicionar-novo,
@@ -27,4 +34,8 @@ div.input-group-pesquisa > .form-control {
 .navbar-nav{
     display: flex;
     align-items: center;;
+}
+
+#navbar-blue{
+    background-color: #B0E0E6;
 }
