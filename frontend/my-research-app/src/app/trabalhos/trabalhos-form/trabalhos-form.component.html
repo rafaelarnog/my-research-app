@@ -1,21 +1,20 @@
-<nav aria-label="breadcrumb">
-    <h1>Trabalhos Form</h1>
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item active" aria-current="page">{{ trabalho.id ? 'Edição' : 'Cadastro' }}</li>
-    </ol>
-</nav>
-<div class="row">
-    <div class="col-md-12">
-        <button class="btn btn-secondary" type="button" (click)="voltarParaListagem()">
-            <fa-icon [icon]="faArrowLeft"></fa-icon> Voltar
-        </button>
-    </div>
-</div>
-<div class="container">
-    <div class="card" id="card-trabalho">
+<div class="container container-trabalho-form">
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="">Home</a></li>
+          <li class="breadcrumb-item"><a href="/trabalhos-form">Trabalhos</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{ trabalho.id ? 'Edição' : 'Novo Trabalho' }}</li>
+        </ol>
+      </nav>
+    <div class="card">
         <div class="card-body">
-            <h2 class="text-center" id="titulo-salvar-trabalho">Cadastrar Trabalho Acadêmico</h2>
-            <form #trabalhoForm="ngForm" (ngSubmit)="onSubmit()">
+            <div id="breadcrumb-trabalho-form">
+                <button class="btn btn-secondary" type="button" (click)="voltarParaListagem()">
+                    <fa-icon [icon]="faArrowLeft"></fa-icon> Voltar
+                </button>
+                <h3 id="titulo-trabalhos-form">{{ trabalho.id ? 'Edição' : 'Novo Trabalho' }}</h3>
+            </div>
+            <form #trabalhoForm="ngForm" (ngSubmit)="onSubmit()" id="form-trabalhos">
 
                 <div class="row">
                     <div class="col-md-12">
@@ -51,25 +50,23 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label for="data-inicio" class="form-label">Data de início: </label>
-                        <input type="text" class="form-control" name="dataInicio" id="dataInicio" [(ngModel)]="trabalho.dataInicio">
+                        <input type="date" class="form-control" name="dataInicio" id="dataInicio" [(ngModel)]="trabalho.dataInicio">
+                        <label for="data-fim" class="form-label">Data finalização: </label>
+                        <input type="date" class="form-control" name="dataFim" id="dataFim" [(ngModel)]="trabalho.dataFim">
                     </div>
                     <div class="col-md-6">
-                        <label for="data-fim" class="form-label">Data finalização: </label>
-                        <input type="text" class="form-control" name="dataFim" id="dataFim" [(ngModel)]="trabalho.dataFim">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <label for="descricao" class="form-label">Descrição: </label>
-                        <textarea name="descricao" id="descricao" cols="30" rows="3" class="form-control" [(ngModel)]="trabalho.descricao"></textarea>
+                        <div class="col-md-12">
+                            <label for="descricao" class="form-label">Descrição: </label>
+                            <textarea name="descricao" id="descricao" cols="30" rows="4" class="form-control" [(ngModel)]="trabalho.descricao"></textarea>
+                        </div>
                     </div>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-12">
-                        <button class="btn btn-primary" id="btn-salvar-trabalho" type="submit" *ngIf="!trabalho.id">
+                        <button class="btn btn-success" id="btn-salvar-trabalho" type="submit" *ngIf="!trabalho.id">
                             <fa-icon [icon]="faSave"></fa-icon> Cadastrar
                         </button>
-                        <button class="btn btn-primary" id="btn-salvar-trabalho" type="submit" *ngIf="trabalho.id">
+                        <button class="btn btn-success" id="btn-salvar-trabalho" type="submit" *ngIf="trabalho.id">
                             <fa-icon [icon]="faEdit"></fa-icon> Editar
                         </button>
                     </div>

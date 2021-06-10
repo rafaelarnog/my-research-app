@@ -1,6 +1,22 @@
-#btn-salvar-trabalho,
-#titulo-salvar-trabalho,
-#card-trabalho {
+#btn-salvar-trabalho {
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+#breadcrumb-trabalho-form {
+    display: flex;
+    align-items: center;
+    height: 55px;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+#titulo-trabalhos-form {
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
+#form-trabalhos {
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 30px;
 }

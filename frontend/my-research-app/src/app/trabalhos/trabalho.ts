@@ -3,8 +3,8 @@ export class Trabalho {
     nome: string;
     categoria: string;
     tipo: string;
-    dataInicio: string;
-    dataFim: string;
+    dataInicio: Date;
+    dataFim: Date;
     descricao: string;
     status: string;
 }
