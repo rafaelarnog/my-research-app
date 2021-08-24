@@ -8,6 +8,8 @@ import { TemplateModule } from './template/template.module';
 import { HomeComponent } from './home/home.component';
 import { TrabalhosModule } from './trabalhos/trabalhos.module';
 import { TrabalhosService } from './trabalhos.service';
+import { LoginModule } from './login/login.module';
+import { CadastroModule } from './cadastro/cadastro.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { TrabalhosService } from './trabalhos.service';
     HttpClientModule,
     AppRoutingModule,
     TemplateModule,
-    TrabalhosModule
+    TrabalhosModule,
+    LoginModule,
+    CadastroModule
   ],
   providers: [
     TrabalhosService

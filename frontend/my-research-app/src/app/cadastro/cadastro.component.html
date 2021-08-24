@@ -1,0 +1,57 @@
+<div id="layoutCadastro">
+    <div id="layoutCadastroContent">
+        <main>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-5">
+                        <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card-header">
+                                <h3 class="text-center font-weight-light my-4">
+                                    Cadastrar
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="alert alert-danger" *ngIf="cadastroError == true">
+                                    Erro ao cadastrar!
+                                </div>
+
+                                <form #cadastroForm="ngForm" (submit)="cadastrar()">
+                                    <div class="form-group">
+                                        <label for="input-username" class="small mb-1">Username</label>
+                                        <input type="text" name="username" 
+                                            [(ngModel)]="username"
+                                            class="form-control py-2"
+                                            placeholder="Digite seu username"
+                                            id="input-username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="input-senha" class="small mb-1">Senha</label>
+                                        <input type="password" name="password" 
+                                            [(ngModel)]="password"
+                                            class="form-control py-2"
+                                            placeholder="Digite sua senha"
+                                            id="input-senha">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="input-senha-confirmar" class="small mb-1">Confirmar senha</label>
+                                        <input type="password" name="password-confirmar" 
+                                            [(ngModel)]="passwordConfirmar"
+                                            class="form-control py-2"
+                                            placeholder="Digite sua senha novamente"
+                                            id="input-senha-confirmar">
+                                    </div>
+
+                                    <div class="form-group d-flex align-items-center justify-content-center mt-4 mb-0">
+                                        <button type="submit" class="btn btn-primary">
+                                            Cadastrar
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
