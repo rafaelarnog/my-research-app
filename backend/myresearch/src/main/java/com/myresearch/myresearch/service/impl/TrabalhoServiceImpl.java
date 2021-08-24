@@ -44,10 +44,8 @@ public class TrabalhoServiceImpl implements TrabalhoService {
                 || trabalhoDto.getStatus().isBlank()
 
                 || trabalhoDto.getDataInicio() == null
-                || trabalhoDto.getDataInicio().isBlank()
 
                 || trabalhoDto.getDataFim() == null
-                || trabalhoDto.getDataFim().isBlank()
 
                 || trabalhoDto.getDescricao() == null
                 || trabalhoDto.getDescricao().isBlank()
@@ -85,10 +83,8 @@ public class TrabalhoServiceImpl implements TrabalhoService {
                 || trabalhoDto.getStatus().isBlank()
 
                 || trabalhoDto.getDataInicio() == null
-                || trabalhoDto.getDataInicio().isBlank()
 
                 || trabalhoDto.getDataFim() == null
-                || trabalhoDto.getDataFim().isBlank()
 
                 || trabalhoDto.getDescricao() == null
                 || trabalhoDto.getDescricao().isBlank()

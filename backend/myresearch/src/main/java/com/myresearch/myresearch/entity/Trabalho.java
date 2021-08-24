@@ -1,9 +1,11 @@
 package com.myresearch.myresearch.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(schema = "my_research", name= "trabalho")
@@ -29,10 +31,12 @@ public class Trabalho {
     private String status;
 
     @Column(name = "datainicio")
-    private String dataInicio;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date dataInicio;
 
     @Column(name = "datafim")
-    private String dataFim;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date dataFim;
 
     @Column(name = "descricao")
     private String descricao;
