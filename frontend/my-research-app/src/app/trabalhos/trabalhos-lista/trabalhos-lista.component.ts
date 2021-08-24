@@ -34,7 +34,7 @@ export class TrabalhosListaComponent implements OnInit {
   }
 
   novoCadastro(){
-    this.router.navigate(['/trabalhos-form']);
+    this.router.navigate(['/trabalhos/cadastro']);
   }
 
   preparaDelecao(trabalho: Trabalho){

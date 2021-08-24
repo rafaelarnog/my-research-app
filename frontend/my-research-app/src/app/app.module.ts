@@ -10,11 +10,13 @@ import { TrabalhosModule } from './trabalhos/trabalhos.module';
 import { TrabalhosService } from './trabalhos.service';
 import { LoginModule } from './login/login.module';
 import { CadastroModule } from './cadastro/cadastro.module';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,

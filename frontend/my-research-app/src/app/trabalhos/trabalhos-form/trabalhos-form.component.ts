@@ -69,7 +69,7 @@ export class TrabalhosFormComponent implements OnInit {
   }
 
   voltarParaListagem(){
-    this.router.navigate(['/trabalhos-lista'])
+    this.router.navigate(['/trabalhos'])
   }
 
 }

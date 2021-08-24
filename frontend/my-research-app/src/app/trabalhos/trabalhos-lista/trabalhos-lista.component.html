@@ -46,7 +46,7 @@
                     <td>{{ trabalho.dataFim }}</td>
                     <td>{{ trabalho.descricao }}</td>
                     <td>
-                        <button class="btn btn-primary" routerLink="/trabalhos-form/{{ trabalho.id }}">
+                        <button class="btn btn-primary" routerLink="/trabalhos/{{ trabalho.id }}">
                             <fa-icon [icon]="faPencilAlt"></fa-icon> Editar
                         </button>
                         <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDelecao" (click)="preparaDelecao(trabalho)">
