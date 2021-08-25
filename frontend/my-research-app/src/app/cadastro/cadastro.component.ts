@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { Usuario } from '../login/usuario';
 
 @Component({
   selector: 'app-cadastro',
@@ -11,14 +13,25 @@ export class CadastroComponent implements OnInit {
   password: string = "";
   passwordConfirmar: string = ""; 
   cadastroError: boolean = false;
+  sucesso: boolean = false;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
   cadastrar() {
-    console.log('Username: '+this.username+" Password: "+this.password+" Password confirmar: "+this.passwordConfirmar);
+    var usuario = new Usuario();
+    usuario.username = this.username;
+    usuario.password = this.password;
+    this.authService
+      .cadastrar(usuario)
+      .subscribe( response => {
+        this.sucesso = true;
+      },
+      error => {
+        this.cadastroError = true;
+      })
   }
 
 }

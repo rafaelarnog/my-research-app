@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,8 @@ import { TrabalhosService } from './trabalhos.service';
 import { LoginModule } from './login/login.module';
 import { CadastroModule } from './cadastro/cadastro.module';
 import { LayoutComponent } from './layout/layout.component';
+import { AuthService } from './auth.service';
+import { TokenInterceptor } from './token.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,13 @@ import { LayoutComponent } from './layout/layout.component';
     CadastroModule
   ],
   providers: [
-    TrabalhosService
+    TrabalhosService,
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
