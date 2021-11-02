@@ -23,11 +23,17 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Value("${security.jwt.signing-key}")
     private String signingKey;
 
+    /*
+        Responsável por gerar os tokens
+    * */
     @Bean
     public TokenStore tokenStore() {
         return new JwtTokenStore(accessTokenConverter());
     }
 
+    /*
+        Responsável por converter o token
+    * */
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter tokenConverter = new JwtAccessTokenConverter();
@@ -35,6 +41,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         return tokenConverter;
     }
 
+    /*
+        Configura os endpoints de autorização
+    * */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints
@@ -43,7 +52,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .authenticationManager(authenticationManager);
     }
 
-    //Aplicações clientes, frontend, configurar aplicação angular
+    /*
+        Configuração da aplicação cliente (angular)
+    * */
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients

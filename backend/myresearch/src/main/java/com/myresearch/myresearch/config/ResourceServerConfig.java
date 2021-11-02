@@ -9,7 +9,9 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
-    //Quem tem a permissão para a api
+    /*
+        Configura quem tem permissão para a api
+    * */
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http

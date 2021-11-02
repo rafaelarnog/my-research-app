@@ -4,7 +4,7 @@ import com.myresearch.myresearch.dto.TrabalhoDto;
 import com.myresearch.myresearch.entity.Trabalho;
 import com.myresearch.myresearch.service.TrabalhoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
