@@ -4,8 +4,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
-
-
+import {MenubarModule} from 'primeng/menubar';
 
 @NgModule({
   declarations: [
@@ -15,7 +14,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     FontAwesomeModule,
-    RouterModule
+    RouterModule,
+    MenubarModule
   ],
   exports: [
     NavbarComponent,

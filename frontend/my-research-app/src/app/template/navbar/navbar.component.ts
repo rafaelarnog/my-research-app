@@ -3,6 +3,8 @@ import { faBars, faBell, faExclamationCircle, faPlus, faSearch, faSignOutAlt, fa
 
 import jQuery from 'jquery';
 
+import {MenuItem} from 'primeng/api';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -18,9 +20,21 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   faPlus = faPlus;
   faBell = faBell;
 
+  items: MenuItem[];
+
   constructor() { }
 
   ngOnInit(): void {
+    this.items = [
+      {
+          icon: 'pi pi-bars',
+          id: 'btnSidebarCollapse'
+      },
+      {
+          label: 'My Research',
+          routerLink : '/'
+      }
+    ];
   }
 
   ngAfterViewInit() {
